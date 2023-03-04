@@ -70,15 +70,43 @@
             <tr> <td colspan="3"> toda una columna </td> </tr>
             <tr> <td rowspan="2"> toda la fila </td> </tr>
             </table>
-            <br><form ACTION="lautaropistagnesisobelvio@gmail.com" method="post" enctype="text/plain">
-                Escribe tu apellido:
-                <br><input type="password" name="apellido" soze="20" maxlength="12">
-                Escribe un comentario:
-                <br><textarea name="comentario" rows="6" cols="40">
-
-
-                </textarea>
-
+            <!-- Formularion por medio de texto -->
+            <p><center><form action="lautaropistagnesisobelvio@gmail.com" method="post" enctype="text/plain">
+                Escriba su apellido
+                <br><input type="text" name="apellido" size="20" maxlength="20">
+                <p>Escriba su contraseña
+                <br><input type="password" name="contraseña" size="30">
+                </p>
+                <P>
+                    Escriba que le parecio la pagina
+                    <br><textarea name="comentario" rows="15" cols="40" maxlength="400"></textarea>
+                </P>
+                <br><center><input type="submit" value="Enviar correo">
+                <input type="reset" value="borrar datos"></center>
+                
+            </form>
+            </center></p>
+            <!-- Formulario por medio de menus -->
+            <form action="lautaropistagnesisbelvio@gmail.com" method="post" enctype="text/plain">
+                <br>¿Cual es tu color favorito?
+                <select name="colorfavorito" multiple size="4">
+                    <option selected></option>
+                        <option>rojo</option>
+                        <option>verde</option>
+                        <option>azul</option>
+                        <option>negro</option>
+                </select>
+            </form>
+            <!-- Formulario por medio de botones -->
+            <form action="lautaropistagnesisobelvio@gmail.com" method="post" enctype="text/plain">
+                Si quiero participar en la lista
+                <input type="checkbox" name="lista" checked>
+                <p>¿Cual es tu sistema operativo favorito?</p>
+                <input type="radio" name="sistema operativo" value="Windows" checked>Windows
+                <input type="radio" name="sistema operativo" value="Linux">Linux
+                <input type="radio" name="sistema operativo" value="MaCos">MaCos
+                <input type="radio" name="sistema operativo" value="Unix">Unix
+                <input type="radio" name="sistema operativo" value="OS/2">OS/2
             </form>
 
 
