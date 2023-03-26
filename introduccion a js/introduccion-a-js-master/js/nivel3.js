@@ -163,8 +163,8 @@ console.log(mediaLinks)
 // TAREA: ¿Te acordás de los bucles del nivel 2? Usando lo que sabés de ellos, realizá iteraciones
 //      sobre cada item de mediaLinks y mostralos en pantalla con console.log
 let i;
-for(i = 0; i <= mediaLinks.length; i += 1){
-    console.log(mediaLinks)
+for(i = 0; i < mediaLinks.length; i += 1){
+    console.log(mediaLinks[i])
 }
 
 
@@ -228,8 +228,8 @@ console.log(nuestroTitulo.textContent)
 
 // TAREA: Actualizá el valor del atributo 'src' de nuestra etiqueta 'img' a "img/kittens.jpeg".
 
-const nuestaImagen = document.querySelector("logo")
-//ourlogo.id = "img/kittens.jpeg"
+const nuestraImagen = document.querySelectorAll(".logo")
+
 
 
 
@@ -283,11 +283,6 @@ title.style.backgroundColor = "red"
 //       en nuestra cabecera.
 //
 // P.S. También les podés dar estilos al nuevo nodo que creaste.
-const bodyPagina = document.querySelector("body")
-const imagPagina = document.createElement("img")
-const textoParrafo = document.createTextNote()
-imagPagina.appendChild(textoParrafo)
-bodyPagina.appendChild(imagPagina)
 
 
 
@@ -297,3 +292,7 @@ bodyPagina.appendChild(imagPagina)
 // Levántate, estira las piernas y celebra tu logro.                      //
 // ¡Creo que esto amerita un festejo!                                     //
 ////////////////////////////////////////////////////////////////////////////
+const botonCalcular = document.querySelector("#calcular")
+  botonCalcular.onclick = function(){
+      alert("tocaste el boton")
+}
