@@ -191,20 +191,32 @@ function sumarFibonacci (numero1, numero2){
     return numero1 + numero2
 }
 
-let numero1;
-let numero2 = 1
-for(numero1 = 0; numero1 < 55; numero1 += numero2){
-    console.log(sumarFibonacci(numero1, numero2))
-    
+let n1 = 0
+let n2 = 0
+let i;
+for(i = 0; i < 10; i += 1){
+  console.log(sumarFibonacci(n1, n2))
+  if(n1 == 0){
+    n1 += 1
+    console.log(n1)
+  }else if(n2 == 0){
+    n2 += 1
+  }else if(n1 < n2){
+    n1 += n2
+  }else if(n2 < n1){
+    n2 += n1
+  }else{
+    n1 += n2
   }
-
-
-
+}
 
 
 /*
 Desafío de programación #15: Crear una función que encuentre el número n de Fibonacci usando recursión
+*/
+console.log(i)
 
+/*
 Desafío de programación #16: Crear una función que dado un número retorne un Boolean (true/false) dependiendo si es primo o no.
 
 Desafío de programación #17: Calcular la suma de los dígitos positivos de un número entero positivo
