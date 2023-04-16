@@ -154,7 +154,7 @@ const mediaLinks = document.querySelectorAll("li")
 
 // TAREA: Ahora utilizá console.log para ver la cantidad de 
 // elementos li que hay con mediaLinks.length
-console.log(mediaLinks)
+console.log(mediaLinks.length)
 
 
 
@@ -228,7 +228,7 @@ console.log(nuestroTitulo.textContent)
 
 // TAREA: Actualizá el valor del atributo 'src' de nuestra etiqueta 'img' a "img/kittens.jpeg".
 
-const nuestraImagen = document.querySelectorAll(".logo")
+document.querySelector("img").src = "img/kittens.jpeg"
 
 
 
@@ -284,7 +284,9 @@ title.style.backgroundColor = "red"
 //
 // P.S. También les podés dar estilos al nuevo nodo que creaste.
 
-
+const imagenNueva = document.createElement("img")
+imagenNueva.src = "img/woman_bw.jpg"
+document.querySelector("header").appendChild(imagenNueva)
 
 
 ////////////////////////////////////////////////////////////////////////////
