@@ -9,26 +9,19 @@ botonEnviar.onclick = function(){
         let mensaje = document.createTextNode("Ingresa la edad de uno de tu familia")
         let parrafo = document.createElement("p")
         let clase = "edadFamilia"
+        clase = clase + i
         input.className += clase
         label.appendChild(mensaje)
         parrafo.appendChild(label)
         parrafo.appendChild(input)
         formulario.appendChild(parrafo)
+        let prueba = "edadFamilia1"
+        console.log(document.querySelector("#" + prueba))
     }
 }
-const botonCalcular = document.querySelector("#calcular")  
-botonCalcular.onclick = function(){
-    const numeroIntegrantes = document.querySelectorAll(".edadFamilia")
-    let i;
-    let edadSumada = 0
-    let edadesDeFamilia = document.querySelectorAll(".edadFamilia")
-    for(i = 0; i < numeroIntegrantes.length; i += 1){
-        edadSumada += Number(edadesDeFamilia[i].value)
+let c = 0
+for(i = 0; i < arrayEdades.length; i++){
+    if(arrayEdades[c] <= arrayEdades[i]){
+         
     }
-    document.querySelector("#promedioEdad").value = (edadSumada / numeroIntegrantes.length)
-    for(i = 0; i < numeroIntegrantes.length; i += 1){
-        edadFamiliares = Number(edadesDeFamilia[i].value)
-        
-    }
-
 }
