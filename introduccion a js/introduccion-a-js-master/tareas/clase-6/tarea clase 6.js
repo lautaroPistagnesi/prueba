@@ -35,7 +35,13 @@ botonCalcular.onclick = function(){
     for(i = 0; i < numeroIntegrantes.length; i += 1){
         arrayEdades.push(Number(edadesDeFamilia[i].value))
     }
-    while(arrayEdades[i]){
 
-    }
+    let numeroMaximo = Math.max(...arrayEdades)
+    document.querySelector("#mayorEdad").value = numeroMaximo
+    let numeroMinimo = Math.min(...arrayEdades)
+    document.querySelector("#menorEdad").value = numeroMinimo
+}
+const botonReset = document.querySelector("#botonReset")
+botonReset.onclick = function(){
+    
 }
