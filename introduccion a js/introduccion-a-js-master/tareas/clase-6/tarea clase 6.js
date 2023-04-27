@@ -15,7 +15,6 @@ botonEnviar.onclick = function(){
         parrafo.appendChild(input)
         formulario.appendChild(parrafo)
     }
-    
 }
 const botonCalcular = document.querySelector("#calcular")  
 botonCalcular.onclick = function(){
@@ -40,8 +39,4 @@ botonCalcular.onclick = function(){
     document.querySelector("#mayorEdad").value = numeroMaximo
     let numeroMinimo = Math.min(...arrayEdades)
     document.querySelector("#menorEdad").value = numeroMinimo
-}
-const botonReset = document.querySelector("#botonReset")
-botonReset.onclick = function(){
-    
 }
