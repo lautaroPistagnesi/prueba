@@ -25,5 +25,11 @@ function pruebaValidarRegalo(){
     validarRegalo("") === "el regalo no puede ser vacio",
     "validarRegalo no valido que el regalo fuera vacio"
   )
+  
+  console.assert(
+    validarRegalo("123456789a123456789a123456789a123456789a123456789a123456789a123456789a123456789a123456789a123456789a") === 
+    "el regalo no puede tener mas de 100 caracteres",
+    "validarRegalo no valido que el regalo no tuviera mas de 100 caracteres"
+  )
 }
 pruebaValidarRegalo()
