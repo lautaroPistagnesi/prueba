@@ -1,6 +1,19 @@
+const numeroFamiliares = Number(document.querySelector("#numeroIntegrantesFamilia").value)
+
+function CantidadFamiliares(numeroFamilia){
+    if(numeroFamilia.length === 0){
+        return "la cantidad de familiares no puede ser cero"
+    }
+    return ""   
+}
+
+CantidadFamiliares(numeroFamiliares)
+let botonApretado = 0
 const botonEnviar = document.querySelector("#botonEnviar")
 botonEnviar.onclick = function(){
     const numeroFamiliares = Number(document.querySelector("#numeroIntegrantesFamilia").value)
+    botonApretado++
+    let clase = "edadFamili"
     let i;
     for(i = 0; i < numeroFamiliares; i += 1){
         let formulario = document.querySelector("form")
@@ -8,21 +21,29 @@ botonEnviar.onclick = function(){
         let input = document.createElement("input")
         let mensaje = document.createTextNode("Ingresa la edad de uno de tu familia")
         let parrafo = document.createElement("p")
-        let clase = "edadFamilia"
-        input.className += clase
         label.appendChild(mensaje)
         parrafo.appendChild(label)
         parrafo.appendChild(input)
-        formulario.appendChild(parrafo)
+        clase += "a"
+        parrafo.className += clase
+        if(botonApretado === 1){
+            formulario.appendChild(parrafo)    
+        }else{
+            document.querySelector("#visible").className = "oculto"
+        }
     }
 }
+
 const botonCalcular = document.querySelector("#calcular")  
 botonCalcular.onclick = function(){
     const numeroIntegrantes = document.querySelectorAll(".edadFamilia")
+    let clase = "edadFamili"
     let i;
     let edadSumada = 0
-    let edadesDeFamilia = document.querySelectorAll(".edadFamilia")
+    
     for(i = 0; i < numeroIntegrantes.length; i += 1){
+        clase += "a" 
+        let edadesDeFamilia = document.querySelectorAll("." + clase)
         edadSumada += Number(edadesDeFamilia[i].value)
     }
     document.querySelector("#promedioEdad").value = (edadSumada / numeroIntegrantes.length)
