@@ -5,23 +5,26 @@
         <link rel="stylesheet" href="tareaClase6.css">
     </head>
     <body>
-        <center><h1>Hola</h1>
-        <div id="visible" class="visible">
-        <p>cuantos integrantes hay en tu familia</p>
-        <input type="text" id="numeroIntegrantesFamilia" class="botonEnviar" maxlength="2">
-        <p><button id="botonEnviar">mostrar integrantes</button></p>
-        </div>
-        <input type="reset" value="Reset" id="botonReset"></center>
+        
+        <center><div id="visible">
+            <h1>Hola</h1>
+            <p>cuantos integrantes hay en tu familia</p>
+            <input type="text" id="numeroIntegrantesFamilia" class="botonEnviar" maxlength="2">
+            <p><button id="botonEnviar">mostrar integrantes</button></p>
+        </div></center>
+        <ul>   
+        </ul>
         <form>
         </form>
-        <br>
-        <label>El o la de mayor edad es el de </label>
+        <button id="calcular" class="oculto">Calcular</button>
+        <center><div class="oculto"><label>El o la de mayor edad es el de </label>
             <input type="text" disabled id="mayorEdad">
-        <p><label>El o la de menor edad es el de </label>
-            <input type="text" disabled id="menorEdad"></p>
-        <p><label>El promedio de la edad en tu familia es de </label>
-            <input type="text" disabled id="promedioEdad"></p>
-            <button id="calcular">Calcular</button>
+            <p><label>El o la de menor edad es el de </label>
+                <input type="text" disabled id="menorEdad"></p>
+            <p><label>El promedio de la edad en tu familia es de </label>
+                <input type="text" disabled id="promedioEdad"></p>
+            <input type="reset" value="Reset" id="botonReset">
+        </div></center>
     </body>
     <script src="tarea clase 6.js"></script>
     <script src="pruebas-clase-6.js"></script>
