@@ -5,3 +5,8 @@
 .oculto {
     display: none;
 }
+
+input[type='reset'] {
+    width: 5rem;
+    justify-self: end;
+}
