@@ -4,23 +4,31 @@
         <title>
             tarea clase 6 Nº2
         </title>
+        <link rel="stylesheet" href="tareaClase6.css">
     </head>
     <body>
-        <h1>Calculadora de salario</h1>
-        <p>Con los botones agrega o quita familiares para hacer el calculo</p>
-        <button id="botonAgregar">agregar</button>
-        <input type="button" id="botonQuitar" value="quitar">
-        <button id="botonCalcular" id="botonCalcular">Calcular</button>
-        <p><label>El salario anual es de:</label>
-            <input type="text" id="promedioAnual" value="promedio salario Anual" disabled></p>
-        <p><label>El salario mensual es de:</label>
-            <input type="text" id="promedioMensual" value="promedio mensual Anual" disabled></p>
-        <p><label>El mayor salario es de:</label>
-            <input type="text" id="mayorSalario" value="mayor salario Anual" disabled></p>
-        <p><label>El menor salario es de:</label>
-            <input type="text" id="menorSalario" value="menor salario Anual" disabled></p>
-        <form class="formulario">
+        <form>
+            <h1>Calculadora de salario</h1>
+            <div id="botones" clase="">
+                <p>Con los botones agrega o quita familiares para hacer el calculo</p>
+                <button id="botonAgregar">agregar</button>
+                <input type="button" id="botonQuitar" value="quitar">
+            </div>
+            <p><button id="botonCalcular" id="botonCalcular">Calcular</button></p>
+            <div id="lugarParametros">
+            </div>
+            <div name="resultados" class="oculto">
+                <p><label>El salario anual es de:</label>
+                    <input type="text" id="promedioAnual" value="promedio salario Anual" disabled></p>
+                <p><label>El salario mensual es de:</label>
+                    <input type="text" id="promedioMensual" value="promedio mensual Anual" disabled></p>
+                <p><label>El mayor salario es de:</label>
+                    <input type="text" id="mayorSalario" value="mayor salario Anual" disabled></p>
+                <p><label>El menor salario es de:</label>
+                    <input type="text" id="menorSalario" value="menor salario Anual" disabled></p>
+            </div>    
         </form>
         <script src="tareaClase6.2.js"></script>
+        <script src="pruebas-clase6.2.js"></script>
     </body>
 </html>
