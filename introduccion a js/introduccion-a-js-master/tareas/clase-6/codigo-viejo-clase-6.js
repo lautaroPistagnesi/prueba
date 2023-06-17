@@ -132,3 +132,52 @@ botonCalcular.onclick = function(){
     let numeroMinimo = Math.min(...arrayEdades)
     document.querySelector("#menorEdad").value = numeroMinimo
 }
+
+
+
+//----------------------------------------------------------------------------------------
+
+if(salariosAnuales.length > 0){
+    nombreSalario += "I"
+    while(salariosAnuales = document.querySelector("[name=" + nombreSalario + "]") === null){
+        console.log(salariosAnuales)
+    }
+}
+
+salariosAnuales.forEach(function(salario){
+nombreSalario += "I"
+salario.name = nombreSalario
+let parrafoInputs = document.querySelector("." + parrafoClase)
+if(parrafoInputs === null){
+    while(parrafoInputs === null){
+        parrafoClase += "I"
+        parrafoInputs = document.querySelector("." + parrafoClase)
+    }
+}else{
+    parrafoClase += "I"
+    parrafoInputs = document.querySelector("." + parrafoClase)
+}
+
+let inputSalario = document.querySelector("[name=" + nombreSalario + "]").value
+const lugarMensaje = document.createElement("label")
+if(Number(inputSalario) === 0){
+    document.querySelector("[name=" + nombreSalario + "]").className = "error"
+    const ErrorMensaje = document.createTextNode("Este parametro no puede ser 0 o nada")
+    lugarMensaje.appendChild(ErrorMensaje)
+    parrafoInputs.appendChild(lugarMensaje)
+    contadorError++
+}else if(!/^[0-9]+$/.test(inputSalario)){
+    document.querySelector("[name=" + nombreSalario + "]").className = "error"
+    const ErrorMensaje = document.createTextNode("Este parametro no pueden ser letras o simbolos")
+    lugarMensaje.appendChild(ErrorMensaje)
+    parrafoInputs.appendChild(lugarMensaje)
+    contadorError++
+}else{
+    document.querySelector("[name=" + nombreSalario + "]").className = ""
+    lugarMensaje.remove()
+}
+
+if(contadorError === 0){
+    console.log("hola")
+}
+})

@@ -1,4 +1,4 @@
-/*function probarValidarSalarios(){
+function probarValidarSalarios(){
     console.assert(
         validarSalarios("") === "este campo no puede ser vacio",
         "validarSalarios no valido que el salario no fuera vacio"
@@ -13,4 +13,3 @@
     )
 }
 probarValidarSalarios()
-*/
