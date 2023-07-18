@@ -88,6 +88,7 @@ botonEnviar.onclick = function(){
             let input = document.createElement("input")
             let mensaje = document.createTextNode("Ingresa la edad de uno de tu familia")
             let parrafo = document.createElement("p")
+            label.className = "text-warning"
             inputError += "I"
             claseParrafo += "I"
             input.name = inputError
