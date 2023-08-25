@@ -1,7 +1,10 @@
 /// <reference types="jquery" />
 
-const botonBuscar = $(".bucar")
-console.log(botonBuscar)
+const botonBuscar = document.querySelector("#buscar")
+botonBuscar.onclick = () => {
+    let numeroPokemones = document.querySelector("#numeroPokemon").value
+    console.log(numeroPokemones)
+}
 
 
 fetch("https://pokeapi.co/api/v2/pokemon/bulbasaur")
