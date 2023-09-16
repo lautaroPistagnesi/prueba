@@ -1,6 +1,5 @@
 /// <reference types="jquery" />
-
-let CambiarImagenes = function(numeroPokemones){
+function CambiarImagenes(numeroPokemones){ //ya
     fetch("https://pokeapi.co/api/v2/pokemon/" + numeroPokemones)
     .then(respuesta => respuesta.json())
     .then(respuestaJSON => {
@@ -8,11 +7,10 @@ let CambiarImagenes = function(numeroPokemones){
         $("#pokemonShiny")[0].src = respuestaJSON.sprites.front_shiny
         $("#nombreDelPokemon")[0].value = respuestaJSON.name
         estadisticas(respuestaJSON)
-        console.log(respuestaJSON)
     })
 }
 
-let validarNombres = (numeroPokemones) => {
+let validarNombres = (numeroPokemones) => { //ya
     fetch("https://pokeapi.co/api/v2/pokemon/" + numeroPokemones)
     .then(respuesta => {if(respuesta.ok === false){
         agregarError("no se encontro ese pokemon")
@@ -23,7 +21,7 @@ let validarNombres = (numeroPokemones) => {
 )
 }
 
-const agregarError = function(mensaje){
+function agregarError(mensaje){ //ya
     const lugarDestino = document.querySelector("#lugarBusqueda")
     $("#numeroPokemon")[0].className = "border border-danger"
     $("#buscar")[0].className = "border border-danger"
@@ -39,7 +37,7 @@ const agregarError = function(mensaje){
         lugarDestino.append($label)
     }
 }
-const sacarError = function(){
+function sacarError(){ //ya
     $("#numeroPokemon")[0].className = ""
     $("#buscar")[0].className = ""
     if($("#mensajeError").length != 0){
@@ -50,7 +48,7 @@ const sacarError = function(){
     for(let i=0;i<respuesta.abilities.length;i++){
         habilidades = respuesta.abilities[i].ability["name"]
     }*/
-let estadisticas = (respuesta)=>{
+let estadisticas = (respuesta)=>{ //ya
     if(!respuesta.types[1]){
         $("#tipo")[0].textContent = respuesta.types[0].type["name"]
     }else{
@@ -60,7 +58,7 @@ let estadisticas = (respuesta)=>{
     $("#altura")[0].textContent = respuesta.height / 10 + "m"
     $("#peso")[0].textContent = (respuesta.weight / 10) + "kg"
     $("#habilidad")[0].textContent = respuesta.abilities[0].ability["name"]
-    $("#descripcionHabilidad").textContent = descripcionHabilidad(respuesta.abilities[0].ability["url"])
+    descripcionHabilidad(respuesta.abilities[0].ability["url"])
     $("#hp")[0].textContent = "Hp: " + respuesta.stats[0].base_stat
     $("#ataque")[0].textContent = "Ataque: " + respuesta.stats[1].base_stat
     $("#defensa")[0].textContent = "Defensa:" + respuesta.stats[2].base_stat
@@ -77,9 +75,8 @@ const descripcionHabilidad = (enlace)=>{
 }
 const botonBuscar = document.querySelector("#buscar")
 botonBuscar.onclick = () => {
-    $("#numeroPokemon")[0].className = ""
-    $("#buscar")[0].className = ""
-    let numeroPokemones = Number(document.querySelector("#numeroPokemon").value)
+    sacarError()
+    let numeroPokemones = document.querySelector("#numeroPokemon").value
     if(Number(numeroPokemones) === 0){
         agregarError("No puede ser 0 o nada")
     }else if(Number(numeroPokemones) <= 1010){
