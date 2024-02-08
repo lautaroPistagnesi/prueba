@@ -6,7 +6,13 @@
   "scripts": {
     "cypress-abrir": "cypress open",
     "empezar": "http-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --collect-coverage",
+    "test:dev": "jest --watch",
+    "test:ui": "run-p serve test:cypress",
+    "test:ui:dev": "run-p serve test:cypress:dev",
+    "test:cypress": "cypress run",
+    "test:cypress:dev": "cypress open",
+    "serve": "http-server -c-1"
   },
   "repository": {
     "type": "git",
@@ -19,8 +25,20 @@
     "jquery": "^3.7.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
+    "@types/jest": "^29.5.12",
     "@types/jquery": "^3.5.16",
+    "babel-jest": "^29.7.0",
     "cypress": "^13.1.0",
-    "eslint": "^8.49.0"
+    "eslint": "^8.49.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-cypress": "^2.15.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jest": "^27.6.3",
+    "jest": "^29.7.0",
+    "jsdom": "^24.0.0",
+    "node-fetch": "^3.3.2",
+    "npm-run-all": "^4.1.5"
   }
 }
