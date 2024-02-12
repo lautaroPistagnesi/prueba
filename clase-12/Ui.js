@@ -1,15 +1,17 @@
-export function CambiarImagenes(numeroPokemones){
+export function buscarImagen(numeroPokemones){
     fetch("https://pokeapi.co/api/v2/pokemon/" + numeroPokemones)
     .then(respuesta => respuesta.json())
-    .then(respuestaJSON => {
-        $("#pokemonNormal")[0].src = respuestaJSON.sprites.front_default
-        $("#pokemonShiny")[0].src = respuestaJSON.sprites.front_shiny
-        $("#nombreDelPokemon")[0].value = respuestaJSON.name
-        estadisticas(respuestaJSON)
-    })
+    .then(respuestaJSON => {CambiarImagenes(respuestaJSON)})
 }
 
-export let estadisticas = (respuesta)=>{
+function CambiarImagenes(respuestaJSON){
+    $("#pokemonNormal")[0].src = respuestaJSON.sprites.front_default
+    $("#pokemonShiny")[0].src = respuestaJSON.sprites.front_shiny
+    $("#nombreDelPokemon")[0].value = respuestaJSON.name
+    estadisticas(respuestaJSON)
+}
+
+let estadisticas = (respuesta)=>{
     if(!respuesta.types[1]){
         $("#tipo")[0].textContent = respuesta.types[0].type["name"]
     }else{
@@ -53,7 +55,7 @@ export function sacarError(){
     }
 }
 
-export const descripcionHabilidad = (enlace)=>{
+const descripcionHabilidad = (enlace)=>{
     fetch(enlace)
     .then(respuesta => respuesta.json())
     .then(respuestaJSON => {

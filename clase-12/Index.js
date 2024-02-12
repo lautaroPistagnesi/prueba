@@ -9,7 +9,7 @@ botonBuscar.onclick = () => {
         informacion.agregarError("No puede ser 0 o nada")
     }else if(Number(numeroPokemones) <= 1010){
         informacion.sacarError()
-        informacion.CambiarImagenes(numeroPokemones)
+        informacion.buscarImagen(numeroPokemones)
     }else if(/^[A-z]+$/.test(numeroPokemones)){
         numeroPokemones = numeroPokemones.toLowerCase()
         validarNombre.validarNombres(numeroPokemones)
