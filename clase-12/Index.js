@@ -2,14 +2,14 @@ import * as informacion from "./Ui.js"
 import * as validarNombre from "./validacion.js"
 
 const botonBuscar = document.querySelector("#buscar")
-botonBuscar.onclick = () => {
+botonBuscar.onclick = async () => {
     informacion.sacarError()
     let numeroPokemones = document.querySelector("#numeroPokemon").value
     if(Number(numeroPokemones) === 0){
         informacion.agregarError("No puede ser 0 o nada")
     }else if(Number(numeroPokemones) <= 1010){
         informacion.sacarError()
-        informacion.buscarImagen(numeroPokemones)
+        informacion.CambiarImagenes( await informacion.buscarImagen(numeroPokemones))
     }else if(/^[A-z]+$/.test(numeroPokemones)){
         numeroPokemones = numeroPokemones.toLowerCase()
         validarNombre.validarNombres(numeroPokemones)

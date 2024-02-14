@@ -11,7 +11,7 @@ jest.mock('node-fetch');
 jest.mock('../Ui.js', () => ({
   agregarError: jest.fn(),
   sacarError: jest.fn(),
-  buscarImagen: jest.fn()
+  CambiarImagenes: jest.fn()
 }));
 
 test("validacion de pokemones", async () => {
@@ -26,7 +26,7 @@ test("validacion de pokemones", async () => {
 
   expect(informacion.agregarError).not.toHaveBeenCalled();
   expect(informacion.sacarError).toHaveBeenCalled();
-  expect(informacion.buscarImagen).toHaveBeenCalledWith("bulbasaur");
+  expect(informacion.CambiarImagenes).toHaveBeenCalledWith(bulbasaur);
 
   mockFetch.mockRestore();
 });
@@ -41,7 +41,7 @@ test("fallo la validacion de pokemones", async () => {
   
     expect(informacion.agregarError).toHaveBeenCalled();
     expect(informacion.sacarError).not.toHaveBeenCalled();
-    expect(informacion.buscarImagen).not.toHaveBeenCalledWith("bulbasaur");
+    expect(informacion.CambiarImagenes).not.toHaveBeenCalledWith(bulbasaur);
   
     // Restaurar el fetch original
     mockFetch.mockRestore();

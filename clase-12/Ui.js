@@ -1,10 +1,10 @@
-export function buscarImagen(numeroPokemones){
-    fetch("https://pokeapi.co/api/v2/pokemon/" + numeroPokemones)
-    .then(respuesta => respuesta.json())
-    .then(respuestaJSON => {CambiarImagenes(respuestaJSON)})
+export async function buscarImagen(numeroPokemones){
+    const datos = await fetch("https://pokeapi.co/api/v2/pokemon/" + numeroPokemones)
+    const datosJSON = await datos.json()
+    return datosJSON
 }
 
-function CambiarImagenes(respuestaJSON){
+export function CambiarImagenes(respuestaJSON){
     $("#pokemonNormal")[0].src = respuestaJSON.sprites.front_default
     $("#pokemonShiny")[0].src = respuestaJSON.sprites.front_shiny
     $("#nombreDelPokemon")[0].value = respuestaJSON.name
